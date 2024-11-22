@@ -1,0 +1,22 @@
+<div class="container d-flex flex-wrap justify-content-center">  
+  <div class="card text-center m-3" style="width: 18rem;">  
+    <div class="card-body bg-danger text-white">  
+      <h2 class="card-title">{{ pokemon.name }}</h2>  
+      <img class="card-img-top rounded border border-danger p-2" [src]="pokemon.sprites.front_default" [alt]="pokemon.name" />  
+      <div class="mt-3">  
+        <p class="card-text"><strong>ID:</strong> {{ pokemon.id }}</p>  
+        <p class="card-text"><strong>Height:</strong> {{ pokemon.height }}</p>  
+        <p class="card-text"><strong>Weight:</strong> {{ pokemon.weight }}</p>  
+      </div>  
+      <h3 class="mt-3 text-black">Abilities:</h3>  
+      <ul class="list-group list-group-flush abilities-list">  
+        <li class="list-group-item ability-item" *ngFor="let ability of pokemon.abilities">  
+          {{ ability.ability.name }}  
+        </li>  
+      </ul>  
+      <div class="mt-3">  
+        <a routerLink="/" class="btn btn-primary">Regresar</a>  
+      </div>  
+    </div>  
+  </div>  
+</div>
